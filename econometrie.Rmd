@@ -55,5 +55,24 @@ summary(reg3)
 ggplot(country, aes(urbgrowth,precgrowth))+geom_point()+geom_smooth()
 #pas de corrélation observée au niveau national
 #aucune relation significative et R-squared ridicules
+reg9 <- lm (urbpop ~ tmpu + petu + preu + year + totpop + centdistcoast + extent_agH + extent_agE, data = region)
+summary(reg9)
 
+reg10 <- lm(urbpop ~ tmpu + petu + preu + year + totpop, data = region)
+summary(reg10)
+
+reg11 <- lm(urbpop ~ ADsm0_2moistu + ADsm0_2tmpu + ADsm0_2preu + year + totpop + primurbpop + sum_agH + sum_agE, data = country)
+summary(reg11)
+
+reg12 <- lm(lnl1 ~ agidison + lnrain30 + hirain + extent_agE + extent_agH, data = city)
+summary(reg12)
+
+reg13 <- lm(dlnl1 ~ year + dlnrain30 + D_ag30 + hirain_extent_agH_dlnrain + hirain_extent_agE_dlnrain, data = city)
+summary(reg13)
+
+reg14 <- lm(dlnl1 ~ year + agidison + dlnrain30 + D_ag30 + hirain_extent_agH_dlnrain + hirain_extent_agE_dlnrain, data = city)
+summary(reg14)
+
+reg15 <- lm(dlnl1 ~ year + agidison + dlnrain30 + D_ag30 + extent_agH + extent_agE + hirain_extent_agH_dlnrain + hirain_extent_agE_dlnrain, data = city)
+summary(reg15)
 ```
